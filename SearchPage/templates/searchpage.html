@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Search Existing</title>
+        </head>
+        <body>
+            <h2> Search for an existing patient using the following search criteria , leave  if unknown</h2>
+            <form action="results/" method="post">
+            {% csrf_token %} 
+            {{ formhere1.as_ul }}
+            <input type="submit" value="Search!">
+            </form>
+        </body>
+    </html>

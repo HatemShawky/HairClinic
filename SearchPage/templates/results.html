@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Search Results</title>
+        </head>
+        <body>
+            {{ status }}<br>
+            {% if status == "Found a match"%}
+                {% for patient in results %}
+                    <a href="{% url  'view_patient' pt_id=patient.id %}"> Name: {{ patient.name }} , Phone: {{ patient.tel }} , Clinic ID: {{ patient.clinicid }} , Social ID: {{ patient.socialid }}</a> <br>
+                {% endfor %}
+            {% else %}
+                <a href="">Add new patient</a>
+            {% endif %}
+            <p>
+            <a href="/">Searchpage</a>
+            </p>
+        </body>
+    </html>
