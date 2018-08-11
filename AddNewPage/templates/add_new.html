@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add new patient</title>
+	</head>
+	<body>
+		
+		<form action="{% url 'insert_successfull_page' %}" method="post">
+		{% csrf_token %}
+		<table>
+			<h2>Patient Data</h2>
+			<table border="1">
+			{{ form_addpt.as_table }}
+			</table>
+			<h2>General Hair loss sheet</h2>
+			<table border="1">
+			{{ form_hairloss.as_table }}
+			</table>
+			<h2>Alopecia Areata (leave blank if negative)</h2>
+			<table border="1">
+			{{ form_AAreata.as_table }}
+			</table>
+			<h2>Androgenic Alopecia (leave blank if negative)</h2>
+			<table border="1">
+			{{ form_AAlopecia.as_table }}
+			</table>
+			
+		</table>
+		<br>
+		<input type="submit" value="Add" />
+	</form>
+		<br>
+	<p><a href="/">Searchpage</a></p>
+	</body>
+</html>
